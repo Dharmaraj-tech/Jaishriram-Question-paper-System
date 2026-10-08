@@ -1,0 +1,23 @@
+services:
+  - type: web
+    name: jaishriram-qpaper-system
+    env: node
+    region: singapore
+    plan: free
+    buildCommand: npm run build:all
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_USERNAME
+        value: admin
+      - key: ADMIN_PASSWORD
+        value: admin123
+      - key: ADMIN_EMAIL
+        value: admin@jaishriram.edu.in
+      - key: CORS_ORIGIN
+        value: "*"
